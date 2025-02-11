@@ -6,8 +6,19 @@ import PlanoCosta from "./pages/PlanoCosta";
 import PlanosBeneficios from "./pages/PlanoBeneficios"; // Importe a nova página
 import CentroClinico from "./pages/CentroClinico";
 import CostaAmbulancias from "./pages/CostaAmbulancias";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Importe o CSS do AOS
+import { useEffect } from "react";
 
 export default function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duração das animações
+      once: true, // Animações ocorrem apenas uma vez
+    });
+  }, []);
+
   return (
     <Router>
       <Routes>
