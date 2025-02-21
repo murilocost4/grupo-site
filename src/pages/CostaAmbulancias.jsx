@@ -1,7 +1,4 @@
-import { FaAmbulance, FaFirstAid, FaUserMd, FaPhoneAlt, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaAmbulance } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -12,7 +9,6 @@ import { PiAmbulanceFill } from "react-icons/pi";
 import { TbUrgent } from "react-icons/tb";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
-import { useState } from "react";
 import Header from "../components/Header";
 
 export default function CostaAmbulancias() {
