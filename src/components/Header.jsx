@@ -1,32 +1,56 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({logoUrl, bgColor, textColor, children}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="bg-slate-100 text-white py-6 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="text-2xl font-bold text-slate-800">
-          Grupo Costa
-        </Link>
-        <nav>
-          <ul className="flex space-x-6 text-slate-600">
-            <li>
-              <Link to="/saude" className="hover:text-sky-500 transition-colors">
-                Saúde
-              </Link>
-            </li>
-            <li>
-              <Link to="/luto" className="hover:text-amber-500 transition-colors">
-                Luto
-              </Link>
-            </li>
-            <li>
-              <Link to="/contato" className="p-2 rounded-md bg-sky-500 transition-colors text-white">
-                Emergência
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <header className={`flex flex-col md:flex-row justify-evenly items-center w-full py-4 px-6 bg-${bgColor}`}>
+      {/* Logo e Botão do Menu (Mobile) */}
+      <div className="flex justify-between items-center w-full md:w-auto">
+        <img src={logoUrl} alt="Logo" className="h-16" />
+        <button
+          className="text-white md:hidden focus:outline-none"
+          onClick={toggleMenu}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
       </div>
+
+      {/* Menu de Navegação */}
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } flex flex-col md:flex md:flex-row gap-4 md:gap-10 justify-center mt-4 md:mt-0 w-full md:w-auto`}
+      >
+        <a href="#sobrenos" className={`font-light text-${textColor} text-sm md:text-lg hover:underline transition-all duration-300`}>
+          Sobre nós
+        </a>
+        {children}
+        <a href="#contato" className={`font-light text-${textColor} text-sm md:text-lg hover:underline transition-all duration-300`}>
+          Contato
+        </a>
+        <a href="#contato" className={`font-light text-${textColor} text-sm md:text-lg hover:underline transition-all duration-300`}>
+          Trabalhe Conosco
+        </a>
+      </nav>
     </header>
   );
 }

@@ -13,77 +13,24 @@ import { TbUrgent } from "react-icons/tb";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
 import { useState } from "react";
-
-function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  return (
-    <header className="flex flex-col md:flex-row justify-evenly items-center bg-slate-800 w-full py-4 px-6">
-      {/* Logo e Botão do Menu (Mobile) */}
-      <div className="flex justify-between items-center w-full md:w-auto">
-        <img src={logoUrl} alt="Logo" className="h-16" />
-        <button
-          className="text-white md:hidden focus:outline-none"
-          onClick={toggleMenu}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-      </div>
-
-      {/* Menu de Navegação */}
-      <nav
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } flex flex-col md:flex md:flex-row gap-4 md:gap-10 justify-center mt-4 md:mt-0 w-full md:w-auto`}
-      >
-        <a href="#sobrenos" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Sobre nós
-        </a>
-        <a href="#servicos" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Nossos Serviços
-        </a>
-        <a href="#frota" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Frota
-        </a>
-        <a href="#regioes" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Regiões Atendidas
-        </a>
-        <a href="#contato" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Contato
-        </a>
-        <a href="#contato" className="font-light text-white text-sm md:text-lg hover:text-orange-500 transition duration-300">
-          Trabalhe Conosco
-        </a>
-      </nav>
-    </header>
-  );
-}
+import Header from "../components/Header";
 
 export default function CostaAmbulancias() {
-
-  
 
   return (
     <>
       {/* Header */}
-      <Header />
+      <Header logoUrl={logoUrl} bgColor="slate-800" textColor="white" className="scroll-smooth">
+        <a href="#servicos" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
+          Nossos Serviços
+        </a>
+        <a href="#frota" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
+          Frota
+        </a>
+        <a href="#regioes" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
+          Regiões Atendidas
+        </a>
+      </Header>
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/bg-amb.jpg')" }}>
@@ -115,20 +62,20 @@ export default function CostaAmbulancias() {
       </section>
 
       {/* Services Section */}
-      <section id="servicos" className="bg-slate-800 flex flex-col items-center py-16 md:pt-40 px-6">
+      <section id="servicos" className="bg-slate-800 flex flex-col items-center py-16 md:pt-40 px-6 scroll-smooth">
         <div className="text-center text-white max-w-2xl" data-aos="zoom-in">
           <h4 className="font-bold text-2xl md:text-3xl mb-4">O que fazemos por você:</h4>
           <p className="font-medium text-lg md:text-xl">Na Costa Ambulâncias, oferecemos uma gama completa de serviços para garantir o cuidado e o suporte que você precisa, a qualquer hora e em qualquer lugar.</p>
         </div>
-        <div className="flex flex-col md:flex-row gap-8 mt-10" data-aos="zoom-in-up">
+        <div className="flex flex-col md:flex-row gap-8 mt-10">
           {[
             { icon: <PiAmbulanceFill className="text-white size-16 mb-4" />, title: "Transporte de Pacientes", description: "Realizamos o transporte de pacientes em situações de urgência e emergência com segurança e conforto, utilizando ambulâncias equipadas e equipes qualificadas." },
             { icon: <TbUrgent className="text-white size-16 mb-4" />, title: "Atendimento Emergencial 24h", description: "Disponibilizamos atendimento de emergência a qualquer momento, com rapidez e eficiência para atender às situações mais críticas." },
             { icon: <MdHealthAndSafety className="text-white size-16 mb-4" />, title: "Cobertura de Eventos", description: "Oferecemos cobertura completa para eventos, com ambulâncias prontas para atender emergências durante eventos de pequeno ou grande porte, garantindo tranquilidade para organizadores e participantes." },
           ].map((service, index) => (
-            <div key={index} className="flex flex-col items-center w-full md:w-80">
+            <div key={index} className="flex flex-col items-center w-full md:w-80"  data-aos="zoom-in-up">
               {service.icon}
-              <div className="py-8 px-4 border border-orange-500 rounded-2xl text-center text-white">
+              <div className="py-8 px-4 border border-orange-500 rounded-2xl text-center text-white"  data-aos="zoom-in-up">
                 <p className="font-light"><span className="font-bold">{service.title}:</span> {service.description}</p>
               </div>
             </div>
@@ -222,7 +169,7 @@ export default function CostaAmbulancias() {
         </div>
       </section>
 
-      <section id="regioes">
+      <section id="regioes" className="scroll-smooth">
         {/* Cidades Atendidas */}
         <div className="bg-slate-800 py-16 text-center px-4">
           <h5 className="text-2xl md:text-3xl font-bold text-white" data-aos="fade-down">
