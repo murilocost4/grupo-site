@@ -4,11 +4,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import logoUrl from '/assets/logopng.png';
 import vctUrl from '/assets/Vector.svg';
-import ambimg from '/assets/amb-img.jpg';
+import ambimg from '/assets/equipe.jpeg';
+import ambimg1 from '/assets/amb1.jpeg';
+import ambimg2 from '/assets/amb2.jpeg';
+import ambimg3 from '/assets/amb3.jpeg';
+import ambimg4 from '/assets/amb4.jpeg';
 import { PiAmbulanceFill } from "react-icons/pi";
 import { TbUrgent } from "react-icons/tb";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
+import { FaCalendarDays } from "react-icons/fa6";
 import Header from "../components/Header";
 
 export default function CostaAmbulancias() {
@@ -29,7 +34,7 @@ export default function CostaAmbulancias() {
       </Header>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/bg-amb.jpg')" }}>
+      <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/bg-ambulancias.jpeg')" }}>
         <div className="absolute top-0 md:right-4/19 p-2 bg-orange-500 rounded-b-lg flex items-center text-center gap-2 z-50">
           <FaAmbulance className="text-white size-6"/>
           <p className="text-white font-light">0800 000 4356</p>
@@ -65,9 +70,10 @@ export default function CostaAmbulancias() {
         </div>
         <div className="flex flex-col md:flex-row gap-8 mt-10">
           {[
-            { icon: <PiAmbulanceFill className="text-white size-16 mb-4" />, title: "Transporte de Pacientes", description: "Realizamos o transporte de pacientes em situações de urgência e emergência com segurança e conforto, utilizando ambulâncias equipadas e equipes qualificadas." },
-            { icon: <TbUrgent className="text-white size-16 mb-4" />, title: "Atendimento Emergencial 24h", description: "Disponibilizamos atendimento de emergência a qualquer momento, com rapidez e eficiência para atender às situações mais críticas." },
-            { icon: <MdHealthAndSafety className="text-white size-16 mb-4" />, title: "Cobertura de Eventos", description: "Oferecemos cobertura completa para eventos, com ambulâncias prontas para atender emergências durante eventos de pequeno ou grande porte, garantindo tranquilidade para organizadores e participantes." },
+            { icon: <PiAmbulanceFill className="text-white size-16 md:size-14 mb-4" />, title: "Transporte de Pacientes", description: "Realizamos o transporte de pacientes em situações de urgência e emergência com segurança e conforto, utilizando ambulâncias equipadas e equipes qualificadas." },
+            { icon: <TbUrgent className="text-white size-16 md:size-14 mb-4" />, title: "Atendimento Emergencial 24h", description: "Disponibilizamos atendimento de emergência a qualquer momento, com rapidez e eficiência para atender às situações mais críticas." },
+            { icon: <MdHealthAndSafety className="text-white size-16 md:size-14 mb-4" />, title: "Cobertura de Eventos", description: "Oferecemos cobertura completa para eventos, com ambulâncias prontas para atender emergências durante eventos de pequeno ou grande porte, garantindo tranquilidade para organizadores e participantes." },
+            { icon: <FaCalendarDays className="text-white size-16 md:size-14 mb-4" />, title: "Locação de Ambuâncias", description: "Oferecemos serviços de locação de ambulâncias equipadas e preparadas para atender diversas necessidades, desde transporte médico de rotina até situações de emergência." },
           ].map((service, index) => (
             <div key={index} className="flex flex-col items-center w-full md:w-80"  data-aos="zoom-in-up">
               {service.icon}
@@ -104,7 +110,7 @@ export default function CostaAmbulancias() {
                
                 <div className="col-span-1 row-span-2 bg-slate-800 rounded-lg">
                   <img
-                    src={ambimg}
+                    src={ambimg1}
                     alt="Imagem 2"
                     className="w-full h-full object-cover rounded-lg opacity-25 hover:opacity-100 hover:brightness-90 hover:scale-105 transition duration:500"
                   />
@@ -114,14 +120,14 @@ export default function CostaAmbulancias() {
                 <div className="col-span-1 row-span-1 flex gap-2">
                   <div className="col-span-1 row-span-2 bg-slate-800 rounded-lg">
                     <img
-                      src={ambimg}
+                      src={ambimg2}
                       alt="Imagem 3"
                       className="w-full h-full object-cover rounded-lg opacity-25 hover:opacity-100 hover:brightness-90 hover:scale-105 transition duration:500"
                     />
                   </div>
                   <div className="col-span-1 row-span-2 bg-slate-800 rounded-lg">
                     <img
-                      src={ambimg}
+                      src={ambimg3}
                       alt="Imagem 4"
                       className="w-full h-full object-cover rounded-lg opacity-25 hover:opacity-100 hover:brightness-90 hover:scale-105 transition duration:500"
                     />
@@ -141,7 +147,7 @@ export default function CostaAmbulancias() {
             </p>
             <div className="bg-slate-800 rounded-2xl h-48 md:w-80 md:h-34">
               <img
-                src={ambimg}
+                src={ambimg4}
                 alt="Imagem 1"
                 className="w-full h-full object-cover rounded-2xl opacity-25 hover:opacity-100 hover:brightness-90 hover:scale-105 transition duration:500"
               />
@@ -151,7 +157,7 @@ export default function CostaAmbulancias() {
           {/* Coluna da Direita */}
           <div className="w-full md:w-2/5 mt-8 md:mt-0 md:ml-20 leading-5">
             <p className="text-slate-800">
-              Com um total de 10 ambulâncias em operação, incluindo as 4 novas unidades recém-adquiridas, garantimos um atendimento rápido e eficiente para qualquer emergência. <br />
+              Com uma frota ambulâncias em operação, incluindo as 4 novas unidades recém-adquiridas, garantimos um atendimento rápido e eficiente para qualquer emergência. <br />
               <br />
               <span className="font-bold">Equipamentos de Última Geração</span> <br />
               <br />
