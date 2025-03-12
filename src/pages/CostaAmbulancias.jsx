@@ -52,9 +52,17 @@ export default function CostaAmbulancias() {
       {/* About Section */}
       <section id="sobrenos" className="flex flex-col md:flex-row bg-gray-200">
         <div className="w-full md:w-6/13 bg-orange-500 rounded-tr-4xl relative">
-          <div className="absolute -top-58 md:top-4 left-1/2 transform -translate-x-1/2 md:left-70 md:translate-x-0 h-64 w-64 md:h-96 md:w-96 rounded-full bg-cover bg-center shadow-2xl" data-aos="fade-right" style={{ backgroundImage: "url('/assets/amb-img.jpg')" }}>
-            <img src={vctUrl} alt="Vector" className=""/>
-          </div>
+        <div 
+          className="absolute -top-58 md:top-4 left-1/2 transform -translate-x-1/2 md:left-70 md:translate-x-0 h-64 w-64 md:h-96 md:w-96 rounded-full bg-cover bg-center shadow-2xl" 
+          data-aos="fade-right" 
+          style={{ backgroundImage: "url('/assets/amb-img.jpg')" }}
+        >
+          {/* Segunda imagem no fundo */}
+          <img src={ambimg1} alt="" className="absolute inset-0 w-full h-full object-cover z-0 rounded-full" />
+
+          {/* Primeira imagem sobreposta */}
+          <img src={vctUrl} alt="Vector" className="relative z-10" />
+        </div>
         </div>
         <div className="w-full md:w-1/2 py-12 px-6 md:px-20" data-aos="fade-left">
           <h3 className="font-bold text-xl md:text-2xl mb-4">Tradição e Inovação na Saúde</h3>
@@ -225,9 +233,12 @@ export default function CostaAmbulancias() {
           </div>
         </div>
         <nav className="border-l border-white flex flex-col gap-2 pl-6 py-2">
-          {["Sobre nós", "Nossos serviços", "Frota", "Regiões atendidas", "Contato", "Trabalhe conosco"].map((link, index) => (
-            <a key={index} href="" className="font-light text-white text-sm">{link}</a>
-          ))}
+          <a href="#sobrenos" className="font-light text-white text-sm">Sobre nós</a>
+          <a href="#servicos" className="font-light text-white text-sm">Nossos serviços</a>
+          <a href="#frota" className="font-light text-white text-sm">Frota</a>
+          <a href="#regioes" className="font-light text-white text-sm">Regiões atendidas</a>
+          <a href="#contato" className="font-light text-white text-sm">Contato</a>
+          <a href="#trabalheconosco" className="font-light text-white text-sm">Trabalhe conosco</a>
         </nav>
         <div className="border-2 border-orange-500 rounded-2xl p-6 w-full md:w-1/3 md:ml-40">
           <h6 className="text-center font-bold text-white text-2xl mb-2">Precisa de ajuda agora?</h6>

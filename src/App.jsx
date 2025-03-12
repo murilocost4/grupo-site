@@ -16,7 +16,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CostaAmbulancias />} />
+        <Route path="/ambulancias" element={<CostaAmbulancias />} />
       </Routes>
     </Router>
   );
