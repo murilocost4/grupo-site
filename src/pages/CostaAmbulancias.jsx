@@ -28,7 +28,7 @@ export default function CostaAmbulancias() {
         <a href="#frota" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
           Frota
         </a>
-        <a href="#regioes" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
+        <a href="#onde-estamos" className="font-light text-white text-sm md:text-lg hover:underline transition duration-300">
           Regiões Atendidas
         </a>
       </Header>
@@ -179,46 +179,15 @@ export default function CostaAmbulancias() {
         </div>
       </section>
 
-      <section id="regioes" className="scroll-smooth">
-        {/* Cidades Atendidas */}
-        <div className="bg-slate-800 py-16 text-center px-4">
-          <h5 className="text-2xl md:text-3xl font-bold text-white" data-aos="fade-down">
-            <span className="text-orange-500">Cidades Atendidas: </span>Levamos Saúde ao Vale do Taquari e Além
-          </h5>
-          <p className="font-light text-white mt-4 text-base md:text-lg" data-aos="fade-down">
-            Estrela, Lajeado, Montenegro, Porto Alegre, Taquari, Teutônia e Venâncio Aires.
-          </p>
-        </div>
-
-        {/* Rede de Parceiros */}
-        <div className="flex flex-col items-center text-center bg-gray-100 py-16 gap-4 px-4">
-          <h6 className="text-3xl md:text-4xl text-orange-500 font-bold" data-aos="fade-down">Nossa rede de parceiros</h6>
-          <p className="text-xl md:text-2xl text-slate-800 font-bold max-w-md" data-aos="fade-down">
-            Hospitais e clínicas conveniadas: seu acesso à saúde está aqui.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 w-full max-w-4xl px-4">
-            {[
-              "Hospitais",
-              "Clínicas",
-              "Profissionais",
-              "Estrela",
-              "Lajeado",
-              "Montenegro",
-              "Porto Alegre",
-              "Venâncio Aires",
-              "Teutônia",
-              "Taquari",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className={`w-full bg-orange-500 p-3 font-bold text-white rounded-xl hover:bg-orange-600 transition duration-300 ${
-                  index === 9 ? "md:col-start-2" : "" // Centraliza o último item na coluna do meio em desktop
-                }`}
-                data-aos="fade-up"
-              >
-                {item}
-              </div>
-            ))}
+      {/* Onde Estamos */}
+      <section id="onde-estamos" className="bg-gray-200 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-8" data-aos="fade-down">
+            Onde Estamos
+          </h2>
+          <div className="p-4 rounded-lg overflow-hidden" data-aos="zoom-in">
+            {/* Mapa do Google */}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.108802520995!2d-51.8661733!3d-29.8034009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951b8569329b5ed9%3A0x2d5e4d3b4b3512b8!2sTv.%20Quatro%20de%20Julho%2C%2030%20-%20Centro%2C%20Taquari%20-%20RS%2C%2095860-000!5e0!3m2!1spt-BR!2sbr!4v1741808530157!5m2!1spt-BR!2sbr" className="b-0 m-auto w-full h-96 rounded-xl shadow-lg" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </section>
@@ -236,7 +205,7 @@ export default function CostaAmbulancias() {
           <a href="#sobrenos" className="font-light text-white text-sm">Sobre nós</a>
           <a href="#servicos" className="font-light text-white text-sm">Nossos serviços</a>
           <a href="#frota" className="font-light text-white text-sm">Frota</a>
-          <a href="#regioes" className="font-light text-white text-sm">Regiões atendidas</a>
+          <a href="#onde-estamos" className="font-light text-white text-sm">Regiões atendidas</a>
           <a href="#contato" className="font-light text-white text-sm">Contato</a>
           <a href="#trabalheconosco" className="font-light text-white text-sm">Trabalhe conosco</a>
         </nav>
